@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ascend Legal &amp; Financial Marketing | Concept home page</title>
+<meta name="description" content="Marketing for law and finance firms and the professionals in them. Concept home page designed by Pixel North for Stephanie Webster.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+@font-face{font-family:"Playfair Display";src:url(fonts/playfair-display-latin-wght-normal.woff2) format("woff2");font-weight:400 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Playfair Display";src:url(fonts/playfair-display-latin-wght-italic.woff2) format("woff2");font-weight:400 900;font-style:italic;font-display:swap}
+@font-face{font-family:"DM Sans";src:url(fonts/dm-sans-latin-wght-normal.woff2) format("woff2");font-weight:100 1000;font-style:normal;font-display:swap}
+
+:root{
+  --oxblood:#4C1413; --blush:#FF1C3E; --blush60:#FF778B; --blush30:#FFBBC5;
+  --beige:#FAF1E8; --forest:#272C15; --khaki:#66693E; --khaki60:#A3A58B;
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --wrap:min(1200px,100% - 48px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--beige);color:var(--forest);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:800;line-height:1.08;margin:0;color:var(--oxblood);letter-spacing:-.01em}
+p{margin:0}
+.wrap{width:var(--wrap);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:8px;background:var(--oxblood);color:var(--beige);padding:10px 16px;border-radius:999px;z-index:100}
+.skip:focus{left:12px}
+:focus-visible{outline:3px solid var(--oxblood);outline-offset:3px;border-radius:6px}
+.on-dark :focus-visible,.dark :focus-visible{outline-color:var(--blush30)}
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+
+/* concept ribbon */
+.ribbon{background:#1d2330;color:var(--beige);font-size:14px;line-height:1.45;text-align:center;padding:9px 16px}
+.ribbon b{font-weight:700}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(250,241,232,.96);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid rgba(76,20,19,.12)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:72px}
+.brand{text-decoration:none;display:flex;flex-direction:column;line-height:1}
+.brand strong{font-family:var(--serif);font-weight:900;font-size:2rem;color:var(--oxblood);letter-spacing:-.02em}
+.brand span{font-family:var(--serif);font-weight:700;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--khaki);margin-top:3px}
+.brand span i{font-weight:600}
+nav ul{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;font-weight:500;font-size:.98rem;color:var(--forest);position:relative;padding:6px 0}
+nav a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--blush);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+nav a:not(.btn):hover::after,nav a:not(.btn):focus-visible::after{transform:scaleX(1)}
+.burger{display:none;background:none;border:0;padding:10px;margin-right:-10px;cursor:pointer;color:var(--oxblood)}
+.burger span{display:block;width:26px;height:2.5px;background:currentColor;border-radius:2px;margin:6px 0;transition:transform .25s,opacity .25s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(8.5px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-8.5px) rotate(-45deg)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--sans);font-weight:700;font-size:1rem;text-decoration:none;border-radius:999px;padding:14px 28px;border:2px solid var(--oxblood);background:var(--oxblood);color:var(--beige);cursor:pointer;transition:transform .2s,background .2s,color .2s}
+.btn:hover{transform:translateY(-2px);background:var(--forest);border-color:var(--forest)}
+.btn.ghost{background:transparent;color:var(--oxblood)}
+.btn.ghost:hover{background:var(--oxblood);color:var(--beige);border-color:var(--oxblood)}
+.btn.small{padding:10px 22px;font-size:.95rem}
+.btn svg{width:18px;height:18px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--blush60);
+  background-image:linear-gradient(rgba(255,255,255,.2) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.2) 1px,transparent 1px);background-size:56px 56px}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;padding:clamp(56px,8vw,108px) 0 clamp(64px,9vw,120px)}
+.scribble{position:absolute;z-index:1;left:-60px;bottom:-40px;width:min(640px,70vw);color:var(--blush30);opacity:.7;pointer-events:none}
+.hero .eyebrow{font-family:var(--serif);font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--oxblood);margin-bottom:22px;display:flex;align-items:center;gap:10px}
+.hero .eyebrow svg{width:22px;height:22px;color:var(--blush)}
+.hero h1{font-size:clamp(2.3rem,4.3vw,3.9rem);font-weight:900;color:var(--oxblood)}
+.hero h1 em{display:block;margin-top:.25em;font-style:italic}
+.hero .lede{margin-top:26px;max-width:34em;font-size:1.15rem;color:var(--forest)}
+.hero .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.burst{position:absolute;pointer-events:none}
+.burst.b1{width:64px;left:-86px;top:-6px;transform:rotate(-8deg)}
+@media (max-width:1360px){.burst.b1{display:none}}
+.hero h1{position:relative}
+.stairs{position:relative;justify-self:end;width:100%;max-width:440px}
+.stairs svg{width:100%;height:auto;overflow:visible}
+.stairs text{font-family:var(--serif);font-weight:700;font-size:15px}
+.spark{position:absolute;pointer-events:none}
+.spark.s1{width:58px;color:var(--blush);right:3%;top:-6%}
+.spark.s2{width:26px;color:var(--khaki);right:-2%;top:22%}
+.spark.s3{width:34px;color:var(--blush);left:-6%;top:44%}
+
+/* specialisms band */
+.band{background:var(--oxblood);color:var(--beige)}
+.band ul{list-style:none;margin:0;padding:22px 0;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 22px;font-family:var(--serif);font-weight:700;font-size:1.02rem}
+.band li{display:flex;align-items:center;gap:22px}
+.band li+li::before{content:"";width:12px;height:12px;background:var(--blush60);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+
+/* sections */
+section{padding:clamp(64px,9vw,116px) 0}
+.eyebrow-s{font-family:var(--serif);font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--khaki);margin-bottom:16px}
+.dark .eyebrow-s{color:var(--blush60)}
+h2{font-size:clamp(2rem,3.9vw,3.3rem)}
+.intro{max-width:40em;margin-top:20px;font-size:1.1rem}
+.head{margin-bottom:clamp(36px,5vw,56px)}
+
+/* who */
+.who .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.card{background:#fff8f1;border:1px solid rgba(76,20,19,.14);border-radius:24px;padding:clamp(24px,3vw,36px);position:relative;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 36px -18px rgba(76,20,19,.45)}
+.num{font-family:var(--serif);font-style:italic;font-weight:800;font-size:1.05rem;color:var(--blush);display:inline-block;margin-bottom:14px}
+.card h3{font-size:1.55rem;margin-bottom:10px}
+.card p{color:var(--forest)}
+
+/* services */
+.dark{background:var(--oxblood);color:var(--beige)}
+.dark h2,.dark h3{color:var(--beige)}
+.services .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.services .card{background:rgba(250,241,232,.06);border:1px solid rgba(250,241,232,.2);color:var(--beige)}
+.services .card:hover{background:rgba(250,241,232,.1);box-shadow:none}
+.services .num{color:var(--blush60)}
+.services .card h3{font-size:1.3rem}
+.services .card p{color:#EADCCF;font-size:.98rem}
+.note{margin-top:34px;display:flex;align-items:center;gap:14px;font-family:var(--serif);font-weight:600;font-size:1.1rem;color:var(--blush30)}
+.note svg{width:26px;height:26px;flex:none;color:var(--blush60)}
+
+/* approach */
+.approach .top{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:start}
+.translator{background:var(--blush30);border-radius:28px;padding:clamp(24px,3.4vw,40px);position:relative}
+.translator .label{font-family:var(--serif);font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--oxblood);margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0 0 22px;padding:0}
+.chips li{border:2px solid var(--oxblood);border-radius:999px;padding:6px 18px;font-weight:700;color:var(--oxblood);background:rgba(250,241,232,.55)}
+.arrow{display:flex;align-items:center;gap:12px;color:var(--oxblood)}
+.arrow svg{width:34px;height:34px;color:var(--blush);flex:none}
+.arrow strong{font-family:var(--serif);font-weight:900;font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.1}
+.steps{margin-top:clamp(40px,6vw,64px);display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
+.step{border-top:3px solid var(--oxblood);padding-top:22px}
+.step .num{font-size:1.4rem}
+.step h3{font-size:1.6rem;margin-bottom:10px}
+
+/* why */
+.why{background:var(--forest);color:var(--beige)}
+.why h2{color:var(--beige)}
+.why .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,88px);align-items:center}
+.why blockquote{margin:0;font-family:var(--serif);font-weight:800;font-style:italic;font-size:clamp(1.9rem,3.6vw,3rem);line-height:1.15;color:var(--blush60)}
+.why blockquote cite{display:block;margin-top:22px;font-family:var(--sans);font-style:normal;font-weight:500;font-size:.95rem;letter-spacing:.04em;color:var(--khaki60)}
+.points{list-style:none;margin:0;padding:0;display:grid;gap:20px}
+.points li{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start}
+.points svg{width:30px;height:30px;color:var(--blush60);margin-top:3px}
+.points h3{font-size:1.3rem;color:var(--beige);margin-bottom:4px}
+.points p{color:#E3DACB;font-size:.98rem}
+
+/* about */
+.about{background:var(--blush30)}
+.about .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,80px);align-items:center}
+.portrait{position:relative;aspect-ratio:4/5;max-width:380px;width:100%;background:var(--blush60);border-radius:200px 200px 28px 28px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;
+  background-image:repeating-linear-gradient(115deg,rgba(76,20,19,.08) 0 2px,transparent 2px 12px)}
+.portrait .mono{font-family:var(--serif);font-style:italic;font-weight:900;font-size:clamp(5rem,12vw,8rem);color:var(--oxblood);line-height:1;margin-bottom:34%}
+.portrait .cap{position:absolute;left:0;right:0;bottom:0;background:var(--forest);color:var(--beige);padding:16px 20px;text-align:center}
+.portrait .cap b{display:block;font-family:var(--serif);font-style:italic;font-weight:800;font-size:1.25rem}
+.portrait .cap span{font-family:var(--serif);font-weight:700;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blush30)}
+.about p+p{margin-top:16px}
+.about .eyebrow-s{color:var(--oxblood)}
+.about .avail{margin-top:26px;display:inline-flex;align-items:center;gap:12px;background:var(--beige);border-radius:999px;padding:10px 20px;font-weight:600;color:var(--oxblood)}
+.about .avail svg{width:20px;height:20px;color:var(--blush)}
+
+/* contact */
+.contact{position:relative;overflow:hidden;background:var(--blush60);
+  background-image:linear-gradient(rgba(255,255,255,.2) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.2) 1px,transparent 1px);background-size:56px 56px}
+.contact .grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:start}
+.contact h2{font-size:clamp(2.1rem,4.2vw,3.6rem)}
+.contact .intro{color:var(--forest)}
+.details{margin:30px 0 0;padding:0;list-style:none;display:grid;gap:14px}
+.details li{display:flex;gap:14px;align-items:center;font-weight:600;color:var(--oxblood)}
+.details svg{width:24px;height:24px;flex:none;color:var(--oxblood)}
+.details a{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+form{background:var(--beige);border-radius:28px;padding:clamp(22px,3.2vw,38px);box-shadow:0 24px 50px -28px rgba(76,20,19,.6)}
+.field{margin-bottom:16px}
+label{display:block;font-weight:700;font-size:.92rem;color:var(--oxblood);margin-bottom:6px}
+input,textarea{width:100%;font:inherit;color:var(--forest);background:#fff;border:2px solid rgba(76,20,19,.35);border-radius:14px;padding:12px 14px}
+input:focus,textarea:focus{outline:none;border-color:var(--oxblood);box-shadow:0 0 0 3px var(--blush30)}
+textarea{min-height:130px;resize:vertical}
+.form-note{margin-top:14px;font-size:.95rem;font-weight:600;color:var(--oxblood);min-height:1.5em}
+.fine{margin-top:10px;font-size:.86rem;color:var(--khaki)}
+.contact .spark.s4{width:70px;right:4%;top:48px;color:var(--blush)}
+.contact .spark.s5{width:30px;left:3%;bottom:40px;color:var(--khaki)}
+
+/* footer */
+footer{background:var(--forest);color:var(--beige);padding:56px 0 36px}
+footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(250,241,232,.18)}
+footer .brand strong{color:var(--blush60)}
+footer .brand span{color:var(--khaki60)}
+footer h3{font-family:var(--sans);font-weight:700;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blush30);margin-bottom:12px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer a{text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer .about-line{margin-top:16px;max-width:24em;color:#E3DACB;font-size:.98rem}
+footer .base{padding-top:24px;display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;font-size:.9rem;color:#D6CCBC}
+.credit{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.credit svg{width:18px;height:18px;color:#E3C48A;flex:none}
+.credit a{font-weight:700;color:var(--beige);text-decoration:underline;text-underline-offset:3px}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .btn,.card,nav a::after{transition:none}
+}
+
+/* responsive */
+@media (max-width:980px){
+  .hero .wrap{grid-template-columns:1fr;gap:40px}
+  .stairs{justify-self:center;max-width:380px}
+  .approach .top,.why .grid,.about .grid,.contact .grid{grid-template-columns:1fr}
+  .services .grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr}
+  .portrait{margin-inline:auto}
+}
+@media (max-width:860px){
+  .burger{display:block}
+  nav{position:absolute;left:0;right:0;top:100%;background:var(--beige);border-bottom:1px solid rgba(76,20,19,.14);display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column;align-items:stretch;gap:0;padding:8px 24px 22px}
+  nav li a:not(.btn){display:block;padding:14px 0;border-bottom:1px solid rgba(76,20,19,.1);font-size:1.05rem}
+  nav li a:not(.btn)::after{display:none}
+  nav li:last-child{margin-top:16px}
+  nav .btn{width:100%}
+}
+@media (max-width:640px){
+  body{font-size:16.5px}
+  .who .grid,.services .grid{grid-template-columns:1fr}
+  .burst.b1{display:none}
+  .hero .cta .btn{width:100%}
+  footer .cols{grid-template-columns:1fr}
+  .band ul{justify-content:flex-start;padding:18px 0}
+  .band ul{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;font-size:.95rem}
+  .band li+li::before{display:none}
+}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="star8" viewBox="0 0 100 100"><polygon fill="currentColor" points="50.0,0.0 55.0,38.0 76.9,23.1 62.0,45.0 100.0,50.0 62.0,55.0 76.9,76.9 55.0,62.0 50.0,100.0 45.0,62.0 23.1,76.9 38.0,55.0 0.0,50.0 38.0,45.0 23.1,23.1 45.0,38.0"/></symbol>
+  <symbol id="burst" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-width="5">
+    <line x1="52" y1="14" x2="96" y2="8" style="stroke:var(--blush)"/>
+    <line x1="48" y1="30" x2="92" y2="30" style="stroke:var(--khaki)"/>
+    <line x1="46" y1="48" x2="96" y2="52" style="stroke:var(--blush)"/>
+    <line x1="48" y1="66" x2="90" y2="78" style="stroke:var(--khaki)"/>
+    <line x1="54" y1="84" x2="80" y2="98" style="stroke:var(--blush)"/>
+  </symbol>
+  <symbol id="chev" viewBox="0 0 40 24" fill="currentColor"><path d="M2 2h10l11 10-11 10H2l11-10zM19 2h10l11 10-11 10H19l11-10z"/></symbol>
+  <symbol id="factory" viewBox="0 0 24 24" fill="currentColor"><path d="M3 21V9l6 3V9l6 3V4h4v17z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 7 9-7"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="ribbon"><b>Concept home page by Pixel North.</b> Designed for Stephanie Webster, using the words and brand from your LinkedIn. Not a live website.</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Ascend Legal and Financial Marketing, home">
+      <strong>Ascend</strong>
+      <span>Legal <i>and</i> Financial Marketing Ltd</span>
+    </a>
+    <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+    <nav id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#who">Who I help</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#approach">How I work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a class="btn small" href="#contact">Get in touch</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<div class="hero" id="top">
+  <svg class="scribble" viewBox="0 0 640 420" fill="none" stroke="currentColor" stroke-width="64" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M40 380 L150 70 L260 340 L370 40 L480 330 L600 110"/>
+  </svg>
+  <div class="wrap">
+    <div>
+      <p class="eyebrow"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#star8"/></svg>Marketing for law and finance</p>
+      <h1>
+        <svg class="burst b1" viewBox="0 0 100 100" aria-hidden="true"><use href="#burst"/></svg>
+        It’s not enough to be brilliant at what you do.
+        <em>People need to know you are brilliant!</em>
+      </h1>
+      <p class="lede">I help legal and financial services firms, and the professionals in them, get clearer on what they offer and make sure the right people see it. Strategy that fits a regulated environment, delivered hands-on.</p>
+      <div class="cta">
+        <a class="btn" href="#contact">Book a conversation <svg viewBox="0 0 40 24" aria-hidden="true"><use href="#chev"/></svg></a>
+        <a class="btn ghost" href="#services">See how I can help</a>
+      </div>
+    </div>
+    <div class="stairs" aria-hidden="true">
+      <svg viewBox="0 0 440 380" role="img">
+        <rect x="0" y="290" width="110" height="90" rx="10" fill="#4C1413"/>
+        <rect x="110" y="215" width="110" height="165" rx="10" fill="#272C15"/>
+        <rect x="220" y="140" width="110" height="240" rx="10" fill="#66693E"/>
+        <rect x="330" y="65" width="110" height="315" rx="10" fill="#FFBBC5"/>
+        <text x="55" y="364" text-anchor="middle" fill="#FAF1E8">Positioning</text>
+        <text x="165" y="364" text-anchor="middle" fill="#FAF1E8">Profile</text>
+        <text x="275" y="364" text-anchor="middle" fill="#FAF1E8">Reputation</text>
+        <text x="385" y="364" text-anchor="middle" fill="#4C1413">Growth</text>
+      </svg>
+      <svg class="spark s1" viewBox="0 0 100 100"><use href="#star8"/></svg>
+      <svg class="spark s2" viewBox="0 0 100 100"><use href="#star8"/></svg>
+      <svg class="spark s3" viewBox="0 0 100 100"><use href="#star8"/></svg>
+    </div>
+  </div>
+</div>
+
+<!-- SPECIALISMS BAND -->
+<div class="band" aria-label="Specialisms">
+  <div class="wrap">
+    <ul>
+      <li>Legal marketing</li>
+      <li>Financial services marketing</li>
+      <li>Brand positioning</li>
+      <li>LinkedIn strategy</li>
+      <li>Thought leadership</li>
+      <li>Reputation building</li>
+    </ul>
+  </div>
+</div>
+
+<!-- WHO -->
+<section class="who" id="who">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow-s">Who I help</p>
+      <h2>Brilliant professionals who know they’re good at what they do.</h2>
+      <p class="intro">I work with firms and people in law and finance who need a little help making sure the right people see it. Over 10 years of sector experience means I understand the compliance considerations and the challenge of standing out where many firms sound the same.</p>
+    </div>
+    <div class="grid">
+      <article class="card rv"><span class="num">01</span><h3>Legal and financial services firms</h3><p>Firms that want to grow but need clearer positioning, stronger marketing foundations and a strategy that fits a regulated environment.</p></article>
+      <article class="card rv"><span class="num">02</span><h3>Time-poor professionals</h3><p>People who know they should be building their profile, but don’t have the time, structure or confidence to do it consistently.</p></article>
+      <article class="card rv"><span class="num">03</span><h3>Leadership teams</h3><p>Teams who need a marketing partner that can step back, see the bigger picture, and turn ideas into a clear plan and practical delivery.</p></article>
+      <article class="card rv"><span class="num">04</span><h3>Businesses in a new phase</h3><p>A new era of leadership, a stronger push for visibility, better client communication, or a brand that can support recruitment and reputation.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services dark" id="services">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow-s">Services</p>
+      <h2>Marketing that looks good and actually works.</h2>
+      <p class="intro">Structured thinking, purposeful creativity and practical execution, from the first plan to the day-to-day delivery.</p>
+    </div>
+    <div class="grid">
+      <article class="card rv"><span class="num">01</span><h3>Marketing strategy</h3><p>A clear plan and the right first step, so effort goes where it counts.</p></article>
+      <article class="card rv"><span class="num">02</span><h3>Brand positioning</h3><p>Say what makes you different in markets where many firms sound the same.</p></article>
+      <article class="card rv"><span class="num">03</span><h3>Content strategy</h3><p>Structured, consistent content that reflects your real expertise.</p></article>
+      <article class="card rv"><span class="num">04</span><h3>Thought leadership</h3><p>Put your insight in front of the people who need to hear it.</p></article>
+      <article class="card rv"><span class="num">05</span><h3>LinkedIn and social media</h3><p>Show up consistently, without it taking over your week.</p></article>
+      <article class="card rv"><span class="num">06</span><h3>Personal branding</h3><p>Help the people in your firm build a profile with confidence.</p></article>
+      <article class="card rv"><span class="num">07</span><h3>Client communications</h3><p>Clearer, warmer messages to the clients you already have.</p></article>
+      <article class="card rv"><span class="num">08</span><h3>Reputation building</h3><p>Reputation-led growth, built steadily and in a way that suits your regulator.</p></article>
+      <article class="card rv"><span class="num">09</span><h3>Fractional marketing support</h3><p>Hands-on marketing leadership alongside your team, without a full-time hire.</p></article>
+    </div>
+    <p class="note rv"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#star8"/></svg>Every firm is different, so pricing is shared after an initial conversation.</p>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach" id="approach">
+  <div class="wrap">
+    <div class="top">
+      <div class="rv">
+        <p class="eyebrow-s">How I work</p>
+        <h2>Marketing, without the jargon.</h2>
+        <p class="intro">Marketing has become a catch-all term with a lot of jargon attached. I’m here to cut through the noise and translate it into the outcomes you need. I work hands-on and alongside you, not at arm’s length.</p>
+      </div>
+      <div class="translator rv">
+        <p class="label">Translated for you</p>
+        <ul class="chips"><li>Lead gen</li><li>PPC</li><li>SEO</li><li>Paid ads</li></ul>
+        <div class="arrow"><svg viewBox="0 0 40 24" aria-hidden="true"><use href="#chev"/></svg><strong>Outcomes you need</strong></div>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step rv"><span class="num">01</span><h3>Understand</h3><p>I take the time to understand your expertise, ambitions and audience before jumping into tactics.</p></div>
+      <div class="step rv"><span class="num">02</span><h3>Plan</h3><p>Getting the groundwork right, so everything that follows is clearer, stronger and more effective.</p></div>
+      <div class="step rv"><span class="num">03</span><h3>Deliver</h3><p>Purposeful creativity and practical execution, so the marketing doesn’t just look good, it works.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="wrap grid">
+    <blockquote class="rv">
+      “Slowing down just enough to get the groundwork right.”
+      <cite>Stephanie Webster, Ascend</cite>
+    </blockquote>
+    <ul class="points">
+      <li class="rv"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg><div><h3>Over 10 years in the sector</h3><p>I know the realities of marketing in legal and financial services, so there’s no long learning curve.</p></div></li>
+      <li class="rv"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg><div><h3>Built for regulated environments</h3><p>Compliance considerations are part of the plan from day one.</p></div></li>
+      <li class="rv"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg><div><h3>Not sure what to do first? Good.</h3><p>That’s where I’m strongest: turning “we should do something” into a clear first step.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap grid">
+    <div class="portrait rv" role="img" aria-label="Placeholder for a portrait of Stephanie Webster">
+      <span class="mono">SW</span>
+      <div class="cap"><b>Stephanie Webster</b><span>Founder &amp; Marketing Consultant</span></div>
+    </div>
+    <div class="rv">
+      <p class="eyebrow-s">About</p>
+      <h2>Hello, I’m Stephanie.</h2>
+      <p class="intro">I’m the founder of Ascend Legal &amp; Financial Marketing. I work with brilliant professionals and firms in law and finance who know they’re good at what they do, but need help making sure the right people see it.</p>
+      <p>I’m especially good at helping clients who know they need to do something, but aren’t sure what to do first.</p>
+      <p class="avail"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg>Remote or in person, across the Manchester area</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <svg class="spark s4" viewBox="0 0 100 100" aria-hidden="true"><use href="#star8"/></svg>
+  <svg class="spark s5" viewBox="0 0 100 100" aria-hidden="true"><use href="#star8"/></svg>
+  <div class="wrap grid">
+    <div class="rv">
+      <p class="eyebrow-s" style="color:var(--oxblood)">Contact</p>
+      <h2>Not sure what to do first? Start with a conversation.</h2>
+      <p class="intro">Tell me a little about your firm and what you’d like people to know about you. No jargon, no pressure.</p>
+      <ul class="details">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:stephanie@ascendlfm.co.uk">stephanie@ascendlfm.co.uk</a></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+447720956561">07720 956 561</a></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg><span>Remote or in person, Manchester area</span></li>
+      </ul>
+    </div>
+    <form class="rv" id="enquiry" novalidate>
+      <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
+      <div class="field"><label for="f-email">Email address</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="f-firm">Firm or organisation <span style="font-weight:400">(optional)</span></label><input id="f-firm" name="firm" autocomplete="organization"></div>
+      <div class="field"><label for="f-msg">How can I help?</label><textarea id="f-msg" name="message" required></textarea></div>
+      <button class="btn" type="submit">Send message <svg viewBox="0 0 40 24" aria-hidden="true"><use href="#chev"/></svg></button>
+      <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+      <p class="fine">Your details are only used to reply to your enquiry.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="dark">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="#top"><strong>Ascend</strong><span>Legal <i>and</i> Financial Marketing Ltd</span></a>
+        <p class="about-line">Marketing for law and finance, for professionals who are brilliant at what they do.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#who">Who I help</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#approach">How I work</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Get in touch</h3>
+        <ul>
+          <li><a href="mailto:stephanie@ascendlfm.co.uk">stephanie@ascendlfm.co.uk</a></li>
+          <li><a href="tel:+447720956561">07720 956 561</a></li>
+          <li>Manchester area, remote or in person</li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <span>© <span id="yr">2026</span> Ascend Legal &amp; Financial Marketing Ltd</span>
+      <span class="credit"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#factory"/></svg>Another small business site, sorted, by <a href="https://pixel-north.co.uk" target="_blank" rel="noopener">Pixel North</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.querySelector('.burger'),n=document.getElementById('nav');
+  function close(){n.classList.remove('open');b.setAttribute('aria-expanded','false')}
+  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});
+  n.addEventListener('click',function(e){if(e.target.closest('a'))close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+
+  var els=document.querySelectorAll('.rv');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')})}
+  else{
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -6% 0px',threshold:.08});
+    els.forEach(function(e){io.observe(e)});
+  }
+
+  var f=document.getElementById('enquiry'),note=document.getElementById('form-note');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.checkValidity()){
+      var bad=f.querySelector(':invalid');note.textContent='Please fill in your name, email and a short message.';if(bad)bad.focus();return;
+    }
+    note.textContent='This is a concept page, so the form doesn’t send yet. On the live site this goes straight to Stephanie.';
+  });
+})();
+</script>
+</body>
+</html>
